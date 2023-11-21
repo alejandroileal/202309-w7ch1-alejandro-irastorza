@@ -14,20 +14,22 @@ export class ThingsController {
 
   async getById(req: Request, res: Response, next: NextFunction) {
     try {
-      const result = await this.repo.getById(req.params.id);
+      const result = await this.repo.getById(req.params.idThing);
       res.json(result);
     } catch (error) {
       next(error);
     }
   }
 
-  search = (_req: Request, _res: Response) => {};
-
-  async create(req: Request, res: Response) {
-    const result = await this.repo.create(req.body);
-    res.status(201);
-    res.statusMessage = 'Created';
-    res.json(result);
+  async create(req: Request, res: Response, next: NextFunction) {
+    try {
+      const result = await this.repo.create(req.body);
+      res.status(201);
+      res.statusMessage = 'Created';
+      res.json(result);
+    } catch (error) {
+      next(error);
+    }
   }
 
   async update(req: Request, res: Response) {
