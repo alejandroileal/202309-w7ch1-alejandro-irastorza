@@ -27,17 +27,6 @@ export class ThingsFileRepo implements Repository<Thing> {
     return result;
   }
 
-  search({
-    _key,
-    _value,
-  }: {
-    _key: string;
-    _value: unknown;
-  }): Promise<Thing[]> {
-    // Temp this.tasks.find((item) => item[_key] === _value)
-    throw new Error('Method not implemented.');
-  }
-
   async create(newItem: Omit<Thing, 'id'>): Promise<Thing> {
     const result: Thing = { id: crypto.randomUUID(), ...newItem };
     const newTasks = [...this.things, result];
