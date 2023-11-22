@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { ThingsFileRepo } from '../repos/thing.file.repo.js';
+import { ThingsFileRepo } from '../repos/things/thing.file.repo.js';
 
 export class ThingsController {
   repo: ThingsFileRepo;

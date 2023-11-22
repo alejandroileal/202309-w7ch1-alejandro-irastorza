@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
-import { Thing } from '../entities/thing';
-import { Repository } from './repo';
-import { HttpError } from '../types/http.error.js';
+import { Thing } from '../../entities/thing';
+import { Repository } from '../repo';
+import { HttpError } from '../../types/http.error.js';
 
 export class ThingsFileRepo implements Repository<Thing> {
   file: string;

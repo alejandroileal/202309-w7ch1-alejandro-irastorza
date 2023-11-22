@@ -1,7 +1,11 @@
 import { Schema, model } from 'mongoose';
-import { Fact } from '../entities/fact.js';
+import { Fact } from '../../entities/fact.js';
 
 const factsSchema = new Schema<Fact>({
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
   title: {
     type: String,
     required: true,
