@@ -2,7 +2,6 @@ import { FactsMongoRepo } from './facts.mongo.repo.js';
 import { FactModel } from './facts.mongo.model.js';
 import { Fact } from '../../entities/fact.js';
 import { UserModel } from '../users/users.mongo.model.js';
-import { HttpError } from '../../types/http.error.js';
 
 jest.mock('./facts.mongo.model.js');
 let repo: FactsMongoRepo;
