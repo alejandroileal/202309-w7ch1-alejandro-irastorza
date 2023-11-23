@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
-import { Thing } from '../entities/thing';
-import { Repository } from './repo';
-import { HttpError } from '../types/http.error.js';
+import { Thing } from '../../entities/thing';
+import { Repository } from '../repo';
+import { HttpError } from '../../types/http.error.js';
 
 export class ThingsFileRepo implements Repository<Thing> {
   file: string;
@@ -25,17 +25,6 @@ export class ThingsFileRepo implements Repository<Thing> {
     const result = this.things.find((item) => item.id === id);
     if (!result) throw new HttpError(404, 'Not Found', 'GetById not possible');
     return result;
-  }
-
-  search({
-    _key,
-    _value,
-  }: {
-    _key: string;
-    _value: unknown;
-  }): Promise<Thing[]> {
-    // Temp this.tasks.find((item) => item[_key] === _value)
-    throw new Error('Method not implemented.');
   }
 
   async create(newItem: Omit<Thing, 'id'>): Promise<Thing> {

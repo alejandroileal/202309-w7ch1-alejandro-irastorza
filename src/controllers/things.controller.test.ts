@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { ThingsController } from './things.controller';
-import { ThingsFileRepo } from '../repos/thing.file.repo.js';
+import { ThingsFileRepo } from '../repos/things/thing.file.repo.js';
 
 describe('Given TasksController class', () => {
   describe('When we instantiate it', () => {
